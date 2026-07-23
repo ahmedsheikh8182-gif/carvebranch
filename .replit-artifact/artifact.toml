@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Carve — Luxury Women's Fashion"
+version = "1.0.0"
+id = "artifacts/carve-store"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24737
+
+[services.development]
+run = "pnpm --filter @workspace/carve-store run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/carve-store", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/carve-store/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24737"
+BASE_PATH = "/"

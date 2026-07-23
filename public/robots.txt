@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+# Storefront
+Allow: /products
+Allow: /products/
+Allow: /collections
+Allow: /collections/
+Allow: /blog
+Allow: /about
+Allow: /contact
+Allow: /faq
+Allow: /shipping
+Allow: /returns
+Allow: /size-guide
+Allow: /stores
+Allow: /gift-cards
+
+# Disallow private / transactional routes
+Disallow: /admin
+Disallow: /admin/
+Disallow: /account
+Disallow: /checkout
+Disallow: /cart
+Disallow: /login
+Disallow: /register
+Disallow: /track
+
+Sitemap: https://carve.pk/sitemap.xml
